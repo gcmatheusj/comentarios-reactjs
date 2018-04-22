@@ -5,6 +5,7 @@
   "dependencies": {
     "ajv": "^6.4.0",
     "bootstrap-css-only": "^4.1.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "firebase": "^4.13.1",
     "re-base": "^3.2.2",
     "react": "^16.3.1",
@@ -15,6 +16,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "coverage": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "react-addons-test-utils": "^15.6.2"
   }
 }

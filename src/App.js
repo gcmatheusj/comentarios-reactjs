@@ -27,7 +27,7 @@ class App extends Component {
 
     this.refComments = this.props.base.syncState('comments', {
       context: this,
-      state: 'comments'
+      state: 'comments',
     })
   }
 
@@ -55,7 +55,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        { this.state.isLoggedIn && 
+        { //this.state.isLoggedIn && 
           <div>
           {this.state.user.displayName}
           <img alt={this.state.user.displayName} src={this.state.user.photoURL}/><br/>

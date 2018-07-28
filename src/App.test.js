@@ -7,24 +7,29 @@ describe('<App />', ()=>{
   const base= {
     syncState: jest.fn()
   }
+
+  const auth = {
+    onAuthStateChanged: jest.fn()
+  }
+
   it('renders without crashing', () => {
-    const wrapper = shallow(<App base={base} />)
+    const wrapper = shallow(<App base={base} auth={auth} />)
     expect(wrapper.length).toBe(1)
   }) 
   it('should have .container class', () => {
-    const wrapper = shallow(<App base={base} />)
+    const wrapper = shallow(<App base={base} auth={auth} />)
     expect(wrapper.is('.container')).toBe(true)
   }) 
   it('show comments', () =>{
-    const wrapper = shallow(<App base={base}/>)
+    const wrapper = shallow(<App base={base} auth={auth} />)
     expect(wrapper.find('Comments').length).toBe(1)
   })
   it('show NewComment', () =>{
-    const wrapper = shallow(<App base={base}/>)
+    const wrapper = shallow(<App base={base} auth={auth} />)
     expect(wrapper.find('NewComment').length).toBe(1)
   })
   it('adds a new comment to state when postNewComment is called', () => {
-    const wrapper = mount(<App base={base}/>)
+    const wrapper = mount(<App base={base} auth={auth}/>)
     wrapper.instance().postNewComment({ comment: 'teste'})
     wrapper.instance().postNewComment({ comment: 'test'})
     wrapper.instance().postNewComment({ comment: 'te'})
